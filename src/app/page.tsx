@@ -405,8 +405,18 @@ function RouteBand() {
 
 function SundaySection() {
   return (
-    <section id="sundays" className="relative bg-[#0E212B] py-24 text-[#F7F3EA] sm:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section id="sundays" className="relative overflow-hidden bg-[#0E212B] py-24 text-[#F7F3EA] sm:py-28">
+      <Image
+        src={firstTime}
+        alt="The congregation standing to sing on a Sunday morning at Independent Baptist Church"
+        fill
+        sizes="100vw"
+        className="object-cover"
+        placeholder="blur"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,33,43,0.86)_0%,rgba(14,33,43,0.5)_45%,rgba(14,33,43,0.86)_100%)]" />
+
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <Kicker disk="#C14E33" dark>
             Sundays at IBC
@@ -414,54 +424,38 @@ function SundaySection() {
           <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] sm:text-5xl`}>
             The real room, the real people, no production.
           </h2>
+          <p className={`${LABEL} mt-4 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7F3EA]/55`}>
+            That&apos;s our actual sanctuary behind these words — a Sunday morning like any other
+          </p>
         </div>
 
-        <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <figure>
-            <div className="relative overflow-hidden rounded-t-[160px] rounded-b-sm border border-white/12">
-              <Image
-                src={firstTime}
-                alt="The congregation standing to sing on a Sunday morning at Independent Baptist Church"
-                className="h-full w-full object-cover"
-                sizes="(min-width: 1024px) 56vw, 100vw"
-                placeholder="blur"
-              />
+        <div className="mt-12 grid gap-3 sm:grid-cols-2">
+          {SERVICES.map((s) => (
+            <div
+              key={s.title}
+              className="group flex items-center justify-between gap-4 rounded-sm border border-white/14 bg-[#0B1B23]/75 px-5 py-4 backdrop-blur-sm transition hover:border-[#D9A13B]/60 hover:bg-[#0B1B23]/85"
+            >
+              <div>
+                <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.22em] text-[#E7B657]`}>
+                  {s.title}
+                </p>
+                <p className="mt-1 text-sm leading-6 text-[#F7F3EA]/65">{s.note}</p>
+              </div>
+              <p className={`${DISPLAY} whitespace-nowrap text-2xl font-medium`}>{s.time}</p>
             </div>
-            <figcaption className={`${LABEL} mt-3 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7F3EA]/55`}>
-              An actual Sunday morning in our sanctuary — arch tipped to Keeseville&apos;s 1843 stone bridge
-            </figcaption>
-          </figure>
-
-          <div>
-            <div className="space-y-3">
-              {SERVICES.map((s) => (
-                <div
-                  key={s.title}
-                  className="group flex items-center justify-between gap-4 rounded-sm border border-white/12 bg-white/[0.05] px-5 py-4 transition hover:border-[#D9A13B]/60 hover:bg-white/[0.08]"
-                >
-                  <div>
-                    <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.22em] text-[#E7B657]`}>
-                      {s.title}
-                    </p>
-                    <p className="mt-1 text-sm leading-6 text-[#F7F3EA]/65">{s.note}</p>
-                  </div>
-                  <p className={`${DISPLAY} whitespace-nowrap text-2xl font-medium`}>{s.time}</p>
-                </div>
-              ))}
-            </div>
-
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {SUNDAY_CHIPS.map((chip) => (
-                <li
-                  key={chip}
-                  className="rounded-full border border-white/16 px-3.5 py-1.5 text-sm leading-6 text-[#F7F3EA]/80"
-                >
-                  {chip}
-                </li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
+
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {SUNDAY_CHIPS.map((chip) => (
+            <li
+              key={chip}
+              className="rounded-full border border-white/20 bg-[#0B1B23]/60 px-3.5 py-1.5 text-sm leading-6 text-[#F7F3EA]/85 backdrop-blur-sm"
+            >
+              {chip}
+            </li>
+          ))}
+        </ul>
 
         <blockquote className="mx-auto mt-16 max-w-3xl text-center">
           <p className={`${DISPLAY} text-balance text-3xl font-medium italic leading-snug text-[#F7F3EA] sm:text-4xl`}>
