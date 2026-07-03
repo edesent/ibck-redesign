@@ -625,8 +625,9 @@ function SeasonsSection() {
 
 function MissionsSection() {
   return (
-    <section id="missions" className="bg-[#F7F3EA] py-24 sm:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+    <section id="missions" className="relative overflow-hidden bg-[#F7F3EA] py-24 sm:py-28">
+      <Compass className="pointer-events-none absolute -right-48 top-1/2 w-[760px] -translate-y-1/2 text-[#8A6A2F]/10 sm:-right-40" />
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <div>
           <Kicker disk="#2F5D4A">Missions</Kicker>
           <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
