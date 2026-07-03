@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 
 import heroMist from "../../public/site-background.jpg";
-import churchFront from "../../public/church-front.jpg";
-import firstTime from "../../public/first-time.jpg";
-import pastorPhoto from "../../public/pastor.jpg";
+import churchFront from "../../public/outside-the-church.jpg";
+import firstTime from "../../public/inside-the-church.jpg";
+import pastorPhoto from "../../public/pastor-kevin-and-joan.jpg";
 import areaLighthouse from "../../public/area-0.jpg";
 import areaBoat from "../../public/area-1.jpg";
 import areaPeaks from "../../public/area-4.jpg";
@@ -182,6 +182,7 @@ export default function IbckRedesignPage() {
       <SeasonsSection />
       <MissionsSection />
       <CredoBand />
+      <FacebookSection />
       <VisitSection />
       <Footer />
     </main>
@@ -484,11 +485,12 @@ function PastorSection() {
     <section id="visit" className="bg-[#F7F3EA] py-24 sm:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <figure className="mx-auto w-full max-w-md">
-          <div className="relative overflow-hidden rounded-t-[999px] rounded-b-sm border-8 border-white shadow-[0_18px_50px_rgba(21,39,48,0.18)]">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-sm border-8 border-white shadow-[0_18px_50px_rgba(21,39,48,0.18)]">
             <Image
               src={pastorPhoto}
               alt="Pastor Kevin Bettinger and his wife Joan bundled up outdoors"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
               sizes="(min-width: 1024px) 40vw, 100vw"
               placeholder="blur"
             />
@@ -684,6 +686,59 @@ function CredoBand() {
         <p className={`${LABEL} mt-8 text-[14px] font-bold uppercase tracking-[0.24em] text-[#0E212B]/70`}>
           Founded 1958 · Independent &amp; congregational · Bible-first
         </p>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Facebook feed                                                       */
+/* ------------------------------------------------------------------ */
+
+function FacebookSection() {
+  return (
+    <section className="relative overflow-hidden bg-[#F7F3EA] py-24 sm:py-28">
+      <Topo className="pointer-events-none absolute -right-28 top-6 w-[520px] text-[#C9B98A]/40" />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div>
+          <Kicker disk="#4A7C99">Week by week</Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
+            The church bulletin board, minus the thumbtacks.
+          </h2>
+          <p className="mt-5 max-w-xl text-lg leading-8 text-[#5C5A4E]">
+            Potluck sign-ups, snow cancellations, baptisms, work days — the
+            week-to-week life of IBC gets posted to Facebook. This is the live
+            feed, straight from the church family.
+          </p>
+          <a
+            href="https://www.facebook.com/keesevilleibc"
+            target="_blank"
+            rel="noreferrer"
+            className={`${LABEL} mt-8 inline-flex h-12 items-center gap-2 rounded-sm bg-[#0E212B] px-6 text-[15px] font-bold uppercase tracking-[0.14em] text-[#F7F3EA] transition hover:bg-[#1B3A4A]`}
+          >
+            <MessageCircle className="size-4 text-[#E7B657]" aria-hidden />
+            Follow @keesevilleibc
+          </a>
+        </div>
+
+        <figure className="justify-self-center">
+          <div className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(21,39,48,0.18)] transition duration-300 hover:rotate-0">
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkeesevilleibc&tabs=timeline&width=480&height=620&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"
+              width="480"
+              height="620"
+              className="block max-w-full border-0"
+              title="Independent Baptist Church on Facebook — latest posts"
+              loading="lazy"
+              allow="encrypted-media"
+            />
+            <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
+              Live from facebook.com/keesevilleibc — updates itself, no
+              webmaster required.
+            </figcaption>
+          </div>
+        </figure>
       </div>
     </section>
   );

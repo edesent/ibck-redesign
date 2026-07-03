@@ -29,7 +29,7 @@ This is a **single-page site**. Everything is in `src/app/page.tsx`:
 | Pastor bio, quotes, section headlines | inline in the section components below the arrays |
 | Phone / address / email / Facebook | `VisitSection` and `Header` components |
 
-Photos are in `public/` (e.g. `public/pastor.jpg`, `public/site-background.jpg`). To swap a photo, replace the file with the **same filename** (or add a new file and update the import at the top of `page.tsx`).
+Photos are in `public/` (e.g. `public/pastor-kevin-and-joan.jpg`, `public/site-background.jpg`). To swap a photo, replace the file with the **same filename** (or add a new file and update the import at the top of `page.tsx`).
 
 ## Design intent — please keep
 
