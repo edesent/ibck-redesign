@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+const CHAT_API = "https://slackwebsitechat.vercel.app";
+const CHAT_KEY = "wbc_0d3359ce36981c2e705b22590618d45bb284b871e75790b3";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,7 +47,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src={`${CHAT_API}/widget/wbc-chat.js`}
+          data-api={CHAT_API}
+          data-key={CHAT_KEY}
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }

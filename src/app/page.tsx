@@ -10,6 +10,8 @@ import {
   Phone,
 } from "lucide-react";
 
+import ChatCard from "../components/chat-card";
+
 import heroMist from "../../public/site-background.jpg";
 import churchFront from "../../public/outside-the-church.jpg";
 import firstTime from "../../public/inside-the-church.jpg";
@@ -756,12 +758,7 @@ function VisitSection() {
               label="Call"
               value="(518) 834-9620"
             />
-            <ContactCard
-              href="mailto:kevin.bettinger@ibck.org"
-              icon={Mail}
-              label="Email Pastor Kevin"
-              value="kevin.bettinger@ibck.org"
-            />
+            <ChatCard />
             <ContactCard
               href="https://www.facebook.com/keesevilleibc"
               icon={MessageCircle}
@@ -771,9 +768,9 @@ function VisitSection() {
           </div>
         </div>
 
-        <figure className="self-center">
+        <figure className="w-full max-w-md self-center justify-self-center">
           <div className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src={churchFront}
                 alt="The white Independent Baptist Church building with its steeple on Route 22"
@@ -955,17 +952,7 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-[13px] text-[#F7F3EA]/45 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© 2026 Independent Baptist Church · Keeseville, New York</p>
-          <p>
-            Website by{" "}
-            <a
-              href="https://www.elijahdesent.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-[#F7F3EA]/70 transition hover:text-[#E7B657]"
-            >
-              Elijah Desent
-            </a>
-          </p>
+          <p className={`${DISPLAY} italic`}>Psalm 121:1-2</p>
         </div>
       </div>
     </footer>
