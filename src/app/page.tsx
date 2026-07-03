@@ -19,6 +19,7 @@ import areaBoat from "../../public/area-1.jpg";
 import areaPeaks from "../../public/area-4.jpg";
 import areaCliffs from "../../public/area-5.jpg";
 import areaIsland from "../../public/area-7.jpg";
+import logoMark from "../../public/ibck-logo.png";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -196,7 +197,12 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0E212B]/85 backdrop-blur-md">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-5 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <Crest className="size-11 shrink-0 text-[#D9A13B]" />
+          <Image
+            src={logoMark}
+            alt="Independent Baptist Church logo — mountain, river, and pines"
+            className="h-9 w-auto shrink-0"
+            priority
+          />
           <span className="min-w-0 leading-tight">
             <span className={`${DISPLAY} block truncate text-[17px] font-semibold text-[#F7F3EA]`}>
               Independent Baptist Church
@@ -797,7 +803,11 @@ function Footer() {
     <footer className="border-t border-[#DCD2BB] bg-[#F7F3EA] py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-start gap-5 px-5 md:flex-row md:items-center md:justify-between lg:px-8">
         <div className="flex items-center gap-3">
-          <Crest className="size-9 text-[#8A6A2F]" />
+          <Image
+            src={logoMark}
+            alt="Independent Baptist Church logo"
+            className="h-8 w-auto shrink-0"
+          />
           <p className="text-sm leading-6 text-[#5C5A4E]">
             Independent Baptist Church · Keeseville, NY · Est. 1958
             <span className="block text-[#8A8571]">
@@ -848,45 +858,6 @@ function Kicker({
       />
       {children}
     </p>
-  );
-}
-
-/* Circular crest in the spirit of the church's own logo:
-   mountain, water, pines — line-art, one color. */
-function Crest({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden fill="none">
-      <circle cx="32" cy="32" r="29" stroke="currentColor" strokeWidth="2.5" />
-      {/* peaks */}
-      <path
-        d="M12 38 L23 22 L29 30 L36 18 L52 38"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* waves */}
-      <path
-        d="M14 44 q4.5 -3.5 9 0 t9 0 t9 0 t9 0"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M18 50 q4.5 -3.5 9 0 t9 0 t9 0"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-      />
-      {/* pines */}
-      <path
-        d="M44 30 l4 -7 l4 7 M45 35 l3 -6 l3 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }
 
