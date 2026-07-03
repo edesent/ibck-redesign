@@ -96,26 +96,10 @@ const ROUTE_STOPS = [
 ];
 
 const SEASONS = [
-  {
-    n: "01",
-    name: "Winter",
-    text: "Whiteface skiing is 40 minutes away, Lake Placid's Olympic village under an hour. Up here, snow is a lifestyle — not an event.",
-  },
-  {
-    n: "02",
-    name: "Spring",
-    text: "The Ausable runs high and loud through the Chasm, and fly fishermen line the West Branch like it's a second congregation.",
-  },
-  {
-    n: "03",
-    name: "Summer",
-    text: "Champlain becomes the town square — boats, camps, cannonballs off the dock, and long northern evenings.",
-  },
-  {
-    n: "04",
-    name: "Fall",
-    text: "The foliage people drive hours to photograph is our morning commute. Hunting season is practically a regional holiday.",
-  },
+  { n: "01", name: "Winter" },
+  { n: "02", name: "Spring" },
+  { n: "03", name: "Summer" },
+  { n: "04", name: "Fall" },
 ];
 
 const GALLERY = [
@@ -603,12 +587,11 @@ function SeasonsSection() {
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
           {SEASONS.map((season) => (
-            <article key={season.name} className="bg-[#0E212B] p-7">
+            <article key={season.name} className="bg-[#0E212B] p-8 text-center">
               <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.3em] text-[#E7B657]`}>
                 {season.n}
               </p>
-              <h3 className={`${DISPLAY} mt-3 text-3xl font-medium`}>{season.name}</h3>
-              <p className="mt-4 leading-7 text-[#F7F3EA]/70">{season.text}</p>
+              <h3 className={`${DISPLAY} mt-3 text-4xl font-medium sm:text-5xl`}>{season.name}</h3>
             </article>
           ))}
         </div>
@@ -849,33 +832,141 @@ function ContactCard({
 
 function Footer() {
   return (
-    <footer className="border-t border-[#DCD2BB] bg-[#F7F3EA] py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-5 px-5 md:flex-row md:items-center md:justify-between lg:px-8">
-        <div className="flex items-center gap-3">
-          <Image
-            src={logoMark}
-            alt="Independent Baptist Church logo"
-            className="h-8 w-auto shrink-0"
-          />
-          <p className="text-sm leading-6 text-[#5C5A4E]">
-            Independent Baptist Church · Keeseville, NY · Est. 1958
-            <span className="block text-[#8A8571]">
-              Redesign concept prepared by{" "}
-              <a href="https://www.elijahdesent.com" className="font-semibold text-[#8A6A2F] hover:underline">
-                Elijah Desent
-              </a>
-            </span>
+    <footer className="bg-[#0B1B23] text-[#F7F3EA]">
+      <Ridge className="w-full rotate-180 text-[#0E212B]" />
+
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-14 pt-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.8fr_1.1fr] lg:px-8">
+        {/* Identity */}
+        <div>
+          <div className="flex items-center gap-3">
+            <Image
+              src={logoMark}
+              alt="Independent Baptist Church logo"
+              className="h-10 w-auto shrink-0"
+            />
+            <p className="leading-tight">
+              <span className={`${DISPLAY} block text-lg font-semibold`}>
+                Independent Baptist Church
+              </span>
+              <span className={`${LABEL} block text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D9A13B]`}>
+                Keeseville · New York
+              </span>
+            </p>
+          </div>
+          <p className="mt-5 max-w-xs text-sm leading-7 text-[#F7F3EA]/65">
+            A Bible-preaching church in the Adirondack foothills since 1958 —
+            between the mountains and the lake, on Route 22.
+          </p>
+          <p className={`${DISPLAY} mt-5 max-w-xs text-sm italic leading-6 text-[#F7F3EA]/55`}>
+            &ldquo;I will lift up mine eyes unto the hills, from whence cometh
+            my help.&rdquo; — Psalm 121:1
           </p>
         </div>
-        <a
-          href="https://www.ibck.org/"
-          target="_blank"
-          rel="noreferrer"
-          className={`${LABEL} inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.2em] text-[#8A6A2F] hover:text-[#152730]`}
-        >
-          Current site — ibck.org
-          <ArrowUpRight className="size-4" aria-hidden />
-        </a>
+
+        {/* Gather */}
+        <div>
+          <h3 className={`${LABEL} text-[13px] font-bold uppercase tracking-[0.28em] text-[#E7B657]`}>
+            Gather with us
+          </h3>
+          <ul className="mt-5 space-y-3">
+            {SERVICES.map((s) => (
+              <li key={s.title} className="flex items-baseline justify-between gap-4 text-sm">
+                <span className="text-[#F7F3EA]/70">{s.title}</span>
+                <span className={`${DISPLAY} whitespace-nowrap font-medium`}>{s.time}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Explore */}
+        <div>
+          <h3 className={`${LABEL} text-[13px] font-bold uppercase tracking-[0.28em] text-[#E7B657]`}>
+            Explore
+          </h3>
+          <ul className="mt-5 space-y-3">
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className="group inline-flex items-center gap-2.5 text-sm text-[#F7F3EA]/70 transition hover:text-white"
+                >
+                  <span
+                    className="size-2 rounded-full ring-1 ring-white/25 transition group-hover:scale-125"
+                    style={{ backgroundColor: item.disk }}
+                    aria-hidden
+                  />
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h3 className={`${LABEL} text-[13px] font-bold uppercase tracking-[0.28em] text-[#E7B657]`}>
+            Find us
+          </h3>
+          <ul className="mt-5 space-y-4 text-sm leading-6">
+            <li>
+              <a
+                href="https://maps.google.com/?q=2030+Route+22+Keeseville+NY+12944"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start gap-3 text-[#F7F3EA]/70 transition hover:text-white"
+              >
+                <MapPin className="mt-0.5 size-4 shrink-0 text-[#D9A13B]" aria-hidden />
+                2030 Route 22, Keeseville, NY 12944
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+15188349620"
+                className="group flex items-start gap-3 text-[#F7F3EA]/70 transition hover:text-white"
+              >
+                <Phone className="mt-0.5 size-4 shrink-0 text-[#D9A13B]" aria-hidden />
+                (518) 834-9620
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:kevin.bettinger@ibck.org"
+                className="group flex items-start gap-3 text-[#F7F3EA]/70 transition hover:text-white"
+              >
+                <Mail className="mt-0.5 size-4 shrink-0 text-[#D9A13B]" aria-hidden />
+                kevin.bettinger@ibck.org
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/keesevilleibc"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start gap-3 text-[#F7F3EA]/70 transition hover:text-white"
+              >
+                <MessageCircle className="mt-0.5 size-4 shrink-0 text-[#D9A13B]" aria-hidden />
+                @keesevilleibc
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-[13px] text-[#F7F3EA]/45 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+          <p>© 2026 Independent Baptist Church · Keeseville, New York</p>
+          <p>
+            Website by{" "}
+            <a
+              href="https://www.elijahdesent.com"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-[#F7F3EA]/70 transition hover:text-[#E7B657]"
+            >
+              Elijah Desent
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
