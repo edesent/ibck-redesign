@@ -1,0 +1,967 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Fraunces, Barlow_Condensed } from "next/font/google";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
+
+import heroMist from "../../public/site-background.jpg";
+import churchFront from "../../public/church-front.jpg";
+import firstTime from "../../public/first-time.jpg";
+import pastorPhoto from "../../public/pastor.jpg";
+import areaLighthouse from "../../public/area-0.jpg";
+import areaBoat from "../../public/area-1.jpg";
+import areaPeaks from "../../public/area-4.jpg";
+import areaCliffs from "../../public/area-5.jpg";
+import areaIsland from "../../public/area-7.jpg";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+});
+
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-label",
+});
+
+const DISPLAY = "[font-family:var(--font-display)]";
+const LABEL = "[font-family:var(--font-label)]";
+
+/* ------------------------------------------------------------------ */
+/* Content                                                             */
+/* ------------------------------------------------------------------ */
+
+const NAV = [
+  { href: "#sundays", label: "Sundays", disk: "#C14E33" },
+  { href: "#visit", label: "First Visit", disk: "#E2A63B" },
+  { href: "#area", label: "Our Area", disk: "#4A7C99" },
+  { href: "#missions", label: "Missions", disk: "#2F5D4A" },
+  { href: "#contact", label: "Contact", disk: "#8A6FA8" },
+];
+
+const SERVICES = [
+  { title: "Sunday School", time: "10:00 AM", note: "Classes for every age" },
+  { title: "Morning Worship", time: "11:00 AM", note: "Nursery through Junior Church available" },
+  { title: "Evening Service", time: "6:30 PM", note: "A quieter, Bible-centered gathering" },
+  { title: "Prayer Meeting", time: "Wed · 6:30 PM", note: "Midweek prayer and encouragement" },
+];
+
+const SUNDAY_CHIPS = [
+  "70–85 minutes, start to handshake",
+  "Hymns and modern worship — about 4 songs",
+  "Preaching straight through books of the Bible",
+  "Coffee bar before and after",
+  "Nursery, Tiny Tots, Children's & Junior Church",
+  "Come dressed however you're comfortable",
+];
+
+const ROUTE_STOPS = [
+  {
+    disk: "#C14E33",
+    name: "Ausable Chasm",
+    distance: "2 miles north",
+    note: "The “Grand Canyon of the Adirondacks,” drawing travelers since 1870.",
+    star: false,
+  },
+  {
+    disk: "#D9A13B",
+    name: "Independent Baptist Church",
+    distance: "2030 Route 22",
+    note: "Look for the steeple on the hill. The coffee is already on.",
+    star: true,
+  },
+  {
+    disk: "#4A7C99",
+    name: "Port Kent Ferry",
+    distance: "10 minutes east",
+    note: "Across Lake Champlain to Burlington, Vermont.",
+    star: false,
+  },
+  {
+    disk: "#2F5D4A",
+    name: "Plattsburgh",
+    distance: "15 miles north",
+    note: "City conveniences at a North Country pace.",
+    star: false,
+  },
+];
+
+const SEASONS = [
+  {
+    n: "01",
+    name: "Winter",
+    text: "Whiteface skiing is 40 minutes away, Lake Placid's Olympic village under an hour. Up here, snow is a lifestyle — not an event.",
+  },
+  {
+    n: "02",
+    name: "Spring",
+    text: "The Ausable runs high and loud through the Chasm, and fly fishermen line the West Branch like it's a second congregation.",
+  },
+  {
+    n: "03",
+    name: "Summer",
+    text: "Champlain becomes the town square — boats, camps, cannonballs off the dock, and long northern evenings.",
+  },
+  {
+    n: "04",
+    name: "Fall",
+    text: "The foliage people drive hours to photograph is our morning commute. Hunting season is practically a regional holiday.",
+  },
+];
+
+const GALLERY = [
+  {
+    image: areaLighthouse,
+    caption: "Bluff Point Light, Valcour Island — guiding Champlain since 1874",
+    rotate: "-rotate-2",
+    portrait: false,
+  },
+  {
+    image: areaPeaks,
+    caption: "The Adirondacks from the middle of the lake",
+    rotate: "rotate-1",
+    portrait: false,
+  },
+  {
+    image: areaIsland,
+    caption: "Scouting a picnic spot the slow way",
+    rotate: "-rotate-1",
+    portrait: true,
+  },
+  {
+    image: areaCliffs,
+    caption: "Champlain's limestone palisades",
+    rotate: "rotate-2",
+    portrait: false,
+  },
+  {
+    image: areaBoat,
+    caption: "Summer Sundays end like this",
+    rotate: "-rotate-1",
+    portrait: false,
+  },
+];
+
+const MISSIONARIES = [
+  { name: "John Starke", org: "Equipping the Saints" },
+  { name: "Jason McGuire", org: "New York Families Action" },
+  { name: "Bill & Debbie Bosley", org: "Ethnos 360" },
+  { name: "Jonathan & Cherith Teachout", org: "Baptist Mid-Missions" },
+  { name: "Joy Wesson", org: "BIMI" },
+  { name: "Tim & Marsha Weeks", org: "Baptist Church Planters" },
+  { name: "Wion & Shirley Wleh", org: "Cup of Cold Water Ministries" },
+  { name: "Tim & Barb Vermilyea", org: "ABWE" },
+  { name: "Wayne Royce", org: "ABWE" },
+  { name: "Adirondack Christian School", org: "Right here in the North Country" },
+];
+
+/* ------------------------------------------------------------------ */
+/* Page                                                                */
+/* ------------------------------------------------------------------ */
+
+export default function IbckRedesignPage() {
+  return (
+    <main
+      className={`${fraunces.variable} ${barlow.variable} min-h-screen bg-[#F7F3EA] font-sans text-[#22333B]`}
+    >
+      <Header />
+      <Hero />
+      <RouteBand />
+      <SundaySection />
+      <PastorSection />
+      <AreaGallery />
+      <SeasonsSection />
+      <MissionsSection />
+      <CredoBand />
+      <VisitSection />
+      <Footer />
+    </main>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Header                                                              */
+/* ------------------------------------------------------------------ */
+
+function Header() {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0E212B]/85 backdrop-blur-md">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-5 lg:px-8">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <Crest className="size-11 shrink-0 text-[#D9A13B]" />
+          <span className="min-w-0 leading-tight">
+            <span className={`${DISPLAY} block truncate text-[17px] font-semibold text-[#F7F3EA]`}>
+              Independent Baptist Church
+            </span>
+            <span className={`${LABEL} block text-[12px] font-semibold uppercase tracking-[0.28em] text-[#D9A13B]`}>
+              Keeseville · New York
+            </span>
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+          {NAV.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={`${LABEL} group inline-flex items-center gap-2 whitespace-nowrap text-[14px] font-semibold uppercase tracking-[0.18em] text-[#F7F3EA]/80 transition hover:text-white`}
+            >
+              <span
+                className="size-2.5 rounded-full ring-1 ring-white/30 transition group-hover:scale-125"
+                style={{ backgroundColor: item.disk }}
+                aria-hidden
+              />
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href="tel:+15188349620"
+            className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-[#F7F3EA]/85 transition hover:text-white xl:inline-flex"
+          >
+            <Phone className="size-4 text-[#D9A13B]" aria-hidden />
+            (518) 834-9620
+          </a>
+          <a
+            href="#visit"
+            className={`${LABEL} inline-flex h-10 items-center whitespace-nowrap rounded-sm bg-[#D9A13B] px-4 text-[14px] font-bold uppercase tracking-[0.14em] text-[#0E212B] transition hover:bg-[#E7B657]`}
+          >
+            Plan a Visit
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero                                                                */
+/* ------------------------------------------------------------------ */
+
+function Hero() {
+  return (
+    <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-[#0E212B]">
+      <Image
+        src={heroMist}
+        alt="Morning mist over an Adirondack lake near Keeseville"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,33,43,0.72)_0%,rgba(14,33,43,0.25)_38%,rgba(14,33,43,0.55)_72%,rgba(14,33,43,0.9)_100%)]" />
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-10 pt-36 lg:px-8">
+        <p className={`${LABEL} inline-flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] font-semibold uppercase tracking-[0.3em] text-[#E7B657]`}>
+          Keeseville, New York
+          <span className="inline-block size-1.5 rounded-full bg-[#E7B657]/70" aria-hidden />
+          Adirondack foothills
+          <span className="inline-block size-1.5 rounded-full bg-[#E7B657]/70" aria-hidden />
+          Est. 1958
+        </p>
+
+        <h1 className={`${DISPLAY} mt-5 max-w-4xl text-balance text-5xl font-medium leading-[1.04] text-[#F7F3EA] sm:text-6xl lg:text-[76px]`}>
+          Between the mountains and the lake, there&apos;s a church that feels
+          like <em className="text-[#E7B657]">home</em>.
+        </h1>
+
+        <p className={`${DISPLAY} mt-6 max-w-2xl text-lg italic leading-8 text-[#F7F3EA]/85 sm:text-xl`}>
+          &ldquo;I will lift up mine eyes unto the hills, from whence cometh my
+          help.&rdquo;
+          <span className={`${LABEL} ml-3 not-italic text-[14px] font-semibold uppercase tracking-[0.24em] text-[#E7B657]`}>
+            Psalm 121:1
+          </span>
+        </p>
+
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="#visit"
+            className={`${LABEL} inline-flex h-13 items-center justify-center gap-2 rounded-sm bg-[#D9A13B] px-7 py-4 text-[16px] font-bold uppercase tracking-[0.14em] text-[#0E212B] transition hover:bg-[#E7B657]`}
+          >
+            Plan your first visit
+            <ArrowRight className="size-4" aria-hidden />
+          </a>
+          <a
+            href="#area"
+            className={`${LABEL} inline-flex h-13 items-center justify-center gap-2 rounded-sm border border-[#F7F3EA]/35 bg-white/5 px-7 py-4 text-[16px] font-bold uppercase tracking-[0.14em] text-[#F7F3EA] backdrop-blur-sm transition hover:bg-white/12`}
+          >
+            See where we live
+          </a>
+        </div>
+
+        {/* Trailhead sign */}
+        <div className="mt-12 overflow-hidden rounded-sm border border-white/14 bg-[#0B1B23]/80 backdrop-blur-md">
+          <p className={`${LABEL} border-b border-white/10 px-5 py-2.5 text-[13px] font-semibold uppercase tracking-[0.3em] text-[#E7B657]`}>
+            Trailhead — weekly gatherings
+          </p>
+          <div className="grid divide-y divide-white/10 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+            {SERVICES.map((s) => (
+              <div key={s.title} className="px-5 py-4">
+                <p className={`${LABEL} text-[13px] font-semibold uppercase tracking-[0.22em] text-[#F7F3EA]/60`}>
+                  {s.title}
+                </p>
+                <p className={`${DISPLAY} mt-1 text-2xl font-medium text-[#F7F3EA]`}>{s.time}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Ridge className="relative z-10 -mb-px w-full text-[#F7F3EA]" />
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Route 22 wayfinding band                                            */
+/* ------------------------------------------------------------------ */
+
+function RouteBand() {
+  return (
+    <section className="relative overflow-hidden bg-[#F7F3EA] pb-24 pt-14 sm:pb-28">
+      <Topo className="pointer-events-none absolute -right-24 -top-10 w-[640px] text-[#C9B98A]/40" />
+
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <Kicker disk="#C14E33">You already know the way</Kicker>
+            <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
+              If you can find Ausable Chasm, you can find us.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[#5C5A4E]">
+              Keeseville is the town at the mouth of the Chasm — the
+              &ldquo;Grand Canyon of the Adirondacks&rdquo; that&apos;s been
+              drawing travelers up Route 22 since 1870. Our church sits on that
+              same road, two miles south. Same sandstone, same river, same
+              welcome.
+            </p>
+          </div>
+          <RouteShield />
+        </div>
+
+        {/* The route line */}
+        <div className="relative mt-14">
+          <div
+            className="absolute bottom-0 left-[13px] top-0 border-l-2 border-dashed border-[#9AA08B] lg:bottom-auto lg:left-0 lg:right-0 lg:top-[13px] lg:border-l-0 lg:border-t-2"
+            aria-hidden
+          />
+          <ol className="grid gap-10 lg:grid-cols-4 lg:gap-6">
+            {ROUTE_STOPS.map((stop) => (
+              <li key={stop.name} className="relative flex gap-5 lg:block">
+                <span
+                  className="relative z-10 flex size-7 shrink-0 items-center justify-center rounded-full ring-4 ring-[#F7F3EA]"
+                  style={{ backgroundColor: stop.disk }}
+                  aria-hidden
+                >
+                  {stop.star && (
+                    <svg viewBox="0 0 24 24" className="size-4 fill-[#0E212B]">
+                      <path d="M12 2l2.6 6.6 7 .5-5.4 4.5 1.7 6.9L12 16.7l-5.9 3.8 1.7-6.9L2.4 9.1l7-.5L12 2z" />
+                    </svg>
+                  )}
+                </span>
+                <div className="lg:mt-5">
+                  <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.2em] text-[#8A6A2F]`}>
+                    {stop.distance}
+                  </p>
+                  <h3 className={`${DISPLAY} mt-1 text-2xl font-medium leading-snug text-[#152730]`}>
+                    {stop.name}
+                  </h3>
+                  <p className="mt-2 max-w-xs leading-7 text-[#5C5A4E]">{stop.note}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <p className={`${DISPLAY} mt-14 text-lg italic text-[#5C5A4E]`}>
+          New York City? 280 miles south — and it feels even farther.
+          <span className="not-italic"> Most folks are surprised New York can be this rural, this quiet, this beautiful. We&apos;re not.</span>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Sundays                                                             */
+/* ------------------------------------------------------------------ */
+
+function SundaySection() {
+  return (
+    <section id="sundays" className="relative bg-[#0E212B] py-24 text-[#F7F3EA] sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="max-w-2xl">
+          <Kicker disk="#C14E33" dark>
+            Sundays at IBC
+          </Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] sm:text-5xl`}>
+            The real room, the real people, no production.
+          </h2>
+        </div>
+
+        <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+          <figure>
+            <div className="relative overflow-hidden rounded-t-[160px] rounded-b-sm border border-white/12">
+              <Image
+                src={firstTime}
+                alt="The congregation standing to sing on a Sunday morning at Independent Baptist Church"
+                className="h-full w-full object-cover"
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                placeholder="blur"
+              />
+            </div>
+            <figcaption className={`${LABEL} mt-3 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7F3EA]/55`}>
+              An actual Sunday morning in our sanctuary — arch tipped to Keeseville&apos;s 1843 stone bridge
+            </figcaption>
+          </figure>
+
+          <div>
+            <div className="space-y-3">
+              {SERVICES.map((s) => (
+                <div
+                  key={s.title}
+                  className="group flex items-center justify-between gap-4 rounded-sm border border-white/12 bg-white/[0.05] px-5 py-4 transition hover:border-[#D9A13B]/60 hover:bg-white/[0.08]"
+                >
+                  <div>
+                    <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.22em] text-[#E7B657]`}>
+                      {s.title}
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-[#F7F3EA]/65">{s.note}</p>
+                  </div>
+                  <p className={`${DISPLAY} whitespace-nowrap text-2xl font-medium`}>{s.time}</p>
+                </div>
+              ))}
+            </div>
+
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {SUNDAY_CHIPS.map((chip) => (
+                <li
+                  key={chip}
+                  className="rounded-full border border-white/16 px-3.5 py-1.5 text-sm leading-6 text-[#F7F3EA]/80"
+                >
+                  {chip}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <blockquote className="mx-auto mt-16 max-w-3xl text-center">
+          <p className={`${DISPLAY} text-balance text-3xl font-medium italic leading-snug text-[#F7F3EA] sm:text-4xl`}>
+            &ldquo;You can question anything we do — but be nice.&rdquo;
+          </p>
+          <cite className={`${LABEL} mt-4 block text-[13px] font-semibold uppercase not-italic tracking-[0.28em] text-[#E7B657]`}>
+            House rule, straight from our congregation
+          </cite>
+        </blockquote>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Pastor                                                              */
+/* ------------------------------------------------------------------ */
+
+function PastorSection() {
+  return (
+    <section id="visit" className="bg-[#F7F3EA] py-24 sm:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <figure className="mx-auto w-full max-w-md">
+          <div className="relative overflow-hidden rounded-t-[999px] rounded-b-sm border-8 border-white shadow-[0_18px_50px_rgba(21,39,48,0.18)]">
+            <Image
+              src={pastorPhoto}
+              alt="Pastor Kevin Bettinger and his wife Joan bundled up outdoors"
+              className="h-full w-full object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              placeholder="blur"
+            />
+          </div>
+          <figcaption className={`${LABEL} mt-4 text-center text-[13px] font-semibold uppercase tracking-[0.24em] text-[#8A8571]`}>
+            Kevin &amp; Joan Bettinger — the hat gives away Detroit
+          </figcaption>
+        </figure>
+
+        <div>
+          <Kicker disk="#E2A63B">Meet the pastor</Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
+            Our pastor found his way here, too.
+          </h2>
+          <div className="mt-6 space-y-5 text-lg leading-8 text-[#5C5A4E]">
+            <p>
+              Pastor Kevin Bettinger spent 15 years in executive protection for
+              Chrysler in Detroit before God called him into full-time ministry
+              in 2015 — first Idaho, then North Carolina, and in September 2024,
+              home to Keeseville with his wife Joan and their two black Labs.
+            </p>
+            <p>
+              He hikes, he birds, he reads — which makes the Adirondacks less
+              of an assignment and more of an answered prayer. If you&apos;re
+              new to the North Country, you won&apos;t have to explain what
+              that&apos;s like. He gets it.
+            </p>
+          </div>
+          <p className={`${DISPLAY} mt-8 border-l-4 border-[#D9A13B] pl-5 text-2xl font-medium italic leading-snug text-[#152730]`}>
+            &ldquo;Love God. Love people. Preach solid, edifying
+            messages.&rdquo;
+          </p>
+          <p className={`${LABEL} mt-3 pl-5 text-[13px] font-semibold uppercase tracking-[0.28em] text-[#8A8571]`}>
+            Pastor Kevin&apos;s whole job description
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Area gallery                                                        */
+/* ------------------------------------------------------------------ */
+
+function AreaGallery() {
+  return (
+    <section id="area" className="relative overflow-hidden bg-[#ECE4D0] py-24 sm:py-28">
+      <Topo className="pointer-events-none absolute -left-32 bottom-0 w-[560px] rotate-180 text-[#C9B98A]/50" />
+
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="max-w-2xl">
+          <Kicker disk="#4A7C99">Our area</Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
+            The unofficial sixth Great Lake is our backyard.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-[#5C5A4E]">
+            These aren&apos;t stock photos. They were shot from our own boats on
+            Lake Champlain — lighthouse runs past Valcour Island, picnic
+            landings, the High Peaks stacked blue on the horizon. This is the
+            water and the country our church family lives in all week.
+          </p>
+        </div>
+
+        <div className="mt-14 flex flex-wrap items-start justify-center gap-8 lg:gap-10">
+          {GALLERY.map((photo) => (
+            <figure
+              key={photo.caption}
+              className={`${photo.rotate} w-64 shrink-0 rounded-sm bg-white p-3 pb-4 shadow-[0_14px_36px_rgba(21,39,48,0.16)] transition duration-300 hover:rotate-0 hover:shadow-[0_22px_48px_rgba(21,39,48,0.22)] sm:w-72`}
+            >
+              <div className={`relative overflow-hidden ${photo.portrait ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+                <Image
+                  src={photo.image}
+                  alt={photo.caption}
+                  fill
+                  sizes="288px"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
+                {photo.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <p className={`${DISPLAY} mx-auto mt-16 max-w-3xl text-center text-2xl font-medium italic leading-snug text-[#152730] sm:text-3xl`}>
+          &ldquo;Many people are surprised that an area in New York can be as
+          rural and beautiful as ours.&rdquo;
+        </p>
+        <p className={`${LABEL} mt-3 text-center text-[13px] font-semibold uppercase tracking-[0.28em] text-[#8A8571]`}>
+          Consider this page our proof
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Seasons                                                             */
+/* ------------------------------------------------------------------ */
+
+function SeasonsSection() {
+  return (
+    <section className="relative bg-[#0E212B] py-24 text-[#F7F3EA] sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="max-w-2xl">
+          <Kicker disk="#2F5D4A" dark>
+            North Country life
+          </Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] sm:text-5xl`}>
+            Four real seasons. One steady church.
+          </h2>
+        </div>
+
+        <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
+          {SEASONS.map((season) => (
+            <article key={season.name} className="bg-[#0E212B] p-7">
+              <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.3em] text-[#E7B657]`}>
+                {season.n}
+              </p>
+              <h3 className={`${DISPLAY} mt-3 text-3xl font-medium`}>{season.name}</h3>
+              <p className="mt-4 leading-7 text-[#F7F3EA]/70">{season.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <p className={`${DISPLAY} mx-auto mt-14 max-w-3xl text-center text-2xl font-medium italic leading-snug text-[#F7F3EA] sm:text-3xl`}>
+          Whatever season you&apos;re in — of the year, or of life — there&apos;s
+          a seat and hot coffee waiting.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Missions                                                            */
+/* ------------------------------------------------------------------ */
+
+function MissionsSection() {
+  return (
+    <section id="missions" className="bg-[#F7F3EA] py-24 sm:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+        <div>
+          <Kicker disk="#2F5D4A">Missions</Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
+            Rooted in Keeseville. Reaching the world.
+          </h2>
+          <p className="mt-5 max-w-xl text-lg leading-8 text-[#5C5A4E]">
+            From the Chasm to the ends of the earth — IBC helps send and
+            sustain missionaries on multiple continents, and invests in
+            Christian education right here in the North Country.
+          </p>
+          <Compass className="mt-10 w-44 text-[#8A6A2F]" />
+        </div>
+
+        <ul className="grid content-start gap-x-8 gap-y-1 sm:grid-cols-2">
+          {MISSIONARIES.map((m) => (
+            <li
+              key={m.name}
+              className="flex items-baseline justify-between gap-4 border-b border-[#DCD2BB] py-3.5"
+            >
+              <span className={`${DISPLAY} text-lg font-medium text-[#152730]`}>{m.name}</span>
+              <span className={`${LABEL} text-right text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A8571]`}>
+                {m.org}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Credo band                                                          */
+/* ------------------------------------------------------------------ */
+
+function CredoBand() {
+  return (
+    <section className="bg-[#D9A13B] py-20 text-[#1A2126] sm:py-24">
+      <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
+        <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.32em] text-[#0E212B]/70`}>
+          Our mission
+        </p>
+        <p className={`${DISPLAY} mt-6 text-balance text-3xl font-medium italic leading-snug sm:text-4xl`}>
+          &ldquo;To glorify God by proclaiming the gospel of Jesus Christ
+          through the power of the Holy Spirit, for the salvation of the lost
+          and the Christlikeness of the church.&rdquo;
+        </p>
+        <p className={`${LABEL} mt-8 text-[14px] font-bold uppercase tracking-[0.24em] text-[#0E212B]/70`}>
+          Founded 1958 · Independent &amp; congregational · Bible-first
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Visit / contact                                                     */
+/* ------------------------------------------------------------------ */
+
+function VisitSection() {
+  return (
+    <section id="contact" className="relative bg-[#0E212B] py-24 text-[#F7F3EA] sm:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <div>
+          <Kicker disk="#8A6FA8" dark>
+            Come see us
+          </Kicker>
+          <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] sm:text-5xl`}>
+            &ldquo;Come and visit us if you&apos;re in the area. We love to
+            meet new people.&rdquo;
+          </h2>
+          <p className="mt-5 max-w-xl text-lg leading-8 text-[#F7F3EA]/75">
+            Headed to the Chasm, catching the ferry, passing through on Route
+            22 — or looking for a church to call home. Either way, that
+            invitation is the whole policy.
+          </p>
+
+          <div className="mt-10 grid gap-3 sm:grid-cols-2">
+            <ContactCard
+              href="https://maps.google.com/?q=2030+Route+22+Keeseville+NY+12944"
+              icon={MapPin}
+              label="Find us"
+              value="2030 Route 22, Keeseville, NY 12944"
+            />
+            <ContactCard
+              href="tel:+15188349620"
+              icon={Phone}
+              label="Call"
+              value="(518) 834-9620"
+            />
+            <ContactCard
+              href="mailto:kevin.bettinger@ibck.org"
+              icon={Mail}
+              label="Email Pastor Kevin"
+              value="kevin.bettinger@ibck.org"
+            />
+            <ContactCard
+              href="https://www.facebook.com/keesevilleibc"
+              icon={MessageCircle}
+              label="Facebook"
+              value="@keesevilleibc"
+            />
+          </div>
+        </div>
+
+        <figure className="self-center">
+          <div className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+            <div className="relative aspect-[16/9] overflow-hidden">
+              <Image
+                src={churchFront}
+                alt="The white Independent Baptist Church building with its steeple on Route 22"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
+              Look for the steeple on the hill — flag out front, door unlocked.
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
+function ContactCard({
+  href,
+  icon: Icon,
+  label,
+  value,
+}: {
+  href: string;
+  icon: typeof MapPin;
+  label: string;
+  value: string;
+}) {
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      className="group rounded-sm border border-white/14 bg-white/[0.05] p-5 transition hover:border-[#D9A13B]/60 hover:bg-white/[0.09]"
+    >
+      <div className="flex items-center justify-between">
+        <Icon className="size-5 text-[#E7B657]" aria-hidden />
+        <ArrowUpRight
+          className="size-4 text-[#F7F3EA]/40 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#E7B657]"
+          aria-hidden
+        />
+      </div>
+      <p className={`${LABEL} mt-4 text-[12px] font-bold uppercase tracking-[0.24em] text-[#F7F3EA]/55`}>
+        {label}
+      </p>
+      <p className="mt-1.5 break-words font-semibold leading-6 text-[#F7F3EA]">{value}</p>
+    </a>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer                                                              */
+/* ------------------------------------------------------------------ */
+
+function Footer() {
+  return (
+    <footer className="border-t border-[#DCD2BB] bg-[#F7F3EA] py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-5 px-5 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="flex items-center gap-3">
+          <Crest className="size-9 text-[#8A6A2F]" />
+          <p className="text-sm leading-6 text-[#5C5A4E]">
+            Independent Baptist Church · Keeseville, NY · Est. 1958
+            <span className="block text-[#8A8571]">
+              Redesign concept prepared by{" "}
+              <a href="https://www.elijahdesent.com" className="font-semibold text-[#8A6A2F] hover:underline">
+                Elijah Desent
+              </a>
+            </span>
+          </p>
+        </div>
+        <a
+          href="https://www.ibck.org/"
+          target="_blank"
+          rel="noreferrer"
+          className={`${LABEL} inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.2em] text-[#8A6A2F] hover:text-[#152730]`}
+        >
+          Current site — ibck.org
+          <ArrowUpRight className="size-4" aria-hidden />
+        </a>
+      </div>
+    </footer>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Shared bits                                                         */
+/* ------------------------------------------------------------------ */
+
+function Kicker({
+  children,
+  disk,
+  dark = false,
+}: {
+  children: React.ReactNode;
+  disk: string;
+  dark?: boolean;
+}) {
+  return (
+    <p
+      className={`${LABEL} inline-flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-[0.3em] ${
+        dark ? "text-[#E7B657]" : "text-[#8A6A2F]"
+      }`}
+    >
+      <span
+        className={`size-3 rounded-full ${dark ? "ring-1 ring-white/30" : "ring-1 ring-[#152730]/20"}`}
+        style={{ backgroundColor: disk }}
+        aria-hidden
+      />
+      {children}
+    </p>
+  );
+}
+
+/* Circular crest in the spirit of the church's own logo:
+   mountain, water, pines — line-art, one color. */
+function Crest({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden fill="none">
+      <circle cx="32" cy="32" r="29" stroke="currentColor" strokeWidth="2.5" />
+      {/* peaks */}
+      <path
+        d="M12 38 L23 22 L29 30 L36 18 L52 38"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* waves */}
+      <path
+        d="M14 44 q4.5 -3.5 9 0 t9 0 t9 0 t9 0"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M18 50 q4.5 -3.5 9 0 t9 0 t9 0"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+      />
+      {/* pines */}
+      <path
+        d="M44 30 l4 -7 l4 7 M45 35 l3 -6 l3 6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/* Layered ridgeline section divider */
+function Ridge({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 1440 110" className={className} aria-hidden preserveAspectRatio="none">
+      <path
+        d="M0 84 L110 58 L230 80 L360 40 L500 74 L640 50 L780 82 L920 46 L1060 76 L1200 56 L1330 84 L1440 66 V110 H0 Z"
+        fill="currentColor"
+        opacity="0.34"
+      />
+      <path
+        d="M0 94 L140 70 L280 90 L430 58 L580 88 L730 64 L880 92 L1030 62 L1180 88 L1320 72 L1440 92 V110 H0 Z"
+        fill="currentColor"
+        opacity="0.62"
+      />
+      <path
+        d="M0 104 L160 86 L330 100 L500 80 L670 100 L840 84 L1010 102 L1180 82 L1330 100 L1440 90 V110 H0 Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+/* Topographic contour texture */
+function Topo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 600 400" className={className} aria-hidden fill="none">
+      {[0, 1, 2, 3, 4, 5].map((i) => (
+        <path
+          key={i}
+          d={`M${40 + i * 18} ${360 - i * 34}
+             C ${150 + i * 10} ${300 - i * 30}, ${170 - i * 8} ${210 - i * 18}, ${290 + i * 6} ${190 - i * 20}
+             S ${480 - i * 12} ${140 - i * 10}, ${560 - i * 14} ${60 - i * 6}`}
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      ))}
+    </svg>
+  );
+}
+
+/* NY Route 22 shield */
+function RouteShield() {
+  return (
+    <div className="inline-flex flex-col items-center" aria-hidden>
+      <div className={`${LABEL} rounded-md border-[3px] border-[#152730] bg-white px-5 py-2 text-center shadow-[3px_3px_0_rgba(21,39,48,0.18)]`}>
+        <span className="block text-[11px] font-bold uppercase tracking-[0.3em] text-[#152730]">
+          New York
+        </span>
+        <span className={`${DISPLAY} block text-4xl font-semibold leading-none text-[#152730]`}>
+          22
+        </span>
+      </div>
+      <span className={`${LABEL} mt-2 text-[11px] font-bold uppercase tracking-[0.26em] text-[#8A8571]`}>
+        Our road
+      </span>
+    </div>
+  );
+}
+
+/* Compass rose */
+function Compass({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 160 160" className={className} aria-hidden fill="none">
+      <circle cx="80" cy="80" r="66" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+      <circle cx="80" cy="80" r="54" stroke="currentColor" strokeWidth="1" opacity="0.35" />
+      <path d="M80 18 L88 72 L80 80 L72 72 Z" fill="currentColor" />
+      <path d="M80 142 L88 88 L80 80 L72 88 Z" fill="currentColor" opacity="0.45" />
+      <path d="M18 80 L72 72 L80 80 L72 88 Z" fill="currentColor" opacity="0.45" />
+      <path d="M142 80 L88 72 L80 80 L88 88 Z" fill="currentColor" opacity="0.45" />
+      <circle cx="80" cy="80" r="5" fill="currentColor" />
+      <text x="80" y="12" textAnchor="middle" fill="currentColor" fontSize="12" fontWeight="700">
+        N
+      </text>
+    </svg>
+  );
+}
