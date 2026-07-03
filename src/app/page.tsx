@@ -532,6 +532,7 @@ function AreaGallery() {
   return (
     <section id="area" className="relative overflow-hidden bg-[#ECE4D0] py-24 sm:py-28">
       <Topo className="pointer-events-none absolute -left-32 bottom-0 w-[560px] rotate-180 text-[#C9B98A]/50" />
+      <Compass className="pointer-events-none absolute right-10 top-14 hidden w-44 text-[#8A6A2F] lg:block xl:right-16" />
 
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <div className="max-w-2xl">
@@ -638,7 +639,6 @@ function MissionsSection() {
             sustain missionaries on multiple continents, and invests in
             Christian education right here in the North Country.
           </p>
-          <Compass className="mt-10 w-44 text-[#8A6A2F]" />
         </div>
 
         <ul className="grid content-start gap-x-8 gap-y-1 sm:grid-cols-2">
