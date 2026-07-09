@@ -8,6 +8,7 @@ import {
   MapPin,
   MessageCircle,
   Phone,
+  PlayCircle,
 } from "lucide-react";
 
 import ChatCard from "../components/chat-card";
@@ -160,7 +161,7 @@ export default function IbckRedesignPage() {
       <SeasonsSection />
       <MissionsSection />
       <CredoBand />
-      <FacebookSection />
+      <LiveStreamSection />
       <VisitSection />
       <Footer />
     </main>
@@ -663,50 +664,51 @@ function CredoBand() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Facebook feed                                                       */
+/* Live stream                                                         */
 /* ------------------------------------------------------------------ */
 
-function FacebookSection() {
+function LiveStreamSection() {
   return (
     <section className="relative overflow-hidden bg-[#F7F3EA] py-24 sm:py-28">
       <Topo className="pointer-events-none absolute -right-28 top-6 w-[520px] text-[#C9B98A]/40" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
-          <Kicker disk="#4A7C99">Week by week</Kicker>
+          <Kicker disk="#4A7C99">Sundays, live</Kicker>
           <h2 className={`${DISPLAY} mt-4 text-balance text-4xl font-medium leading-[1.08] text-[#152730] sm:text-5xl`}>
-            The church bulletin board, minus the thumbtacks.
+            Can&apos;t make it up the mountain? Worship with us online.
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-8 text-[#5C5A4E]">
-            Potluck sign-ups, snow cancellations, baptisms, work days — the
-            week-to-week life of IBC gets posted to Facebook. This is the live
-            feed, straight from the church family.
+            Snowed in, traveling, or homebound — the whole service streams live
+            on our YouTube channel every Sunday, and each one stays up to watch
+            again any time.
           </p>
           <a
-            href="https://www.facebook.com/keesevilleibc"
+            href="https://www.youtube.com/@ibckeeseville"
             target="_blank"
             rel="noreferrer"
             className={`${LABEL} mt-8 inline-flex h-12 items-center gap-2 rounded-sm bg-[#0E212B] px-6 text-[15px] font-bold uppercase tracking-[0.14em] text-[#F7F3EA] transition hover:bg-[#1B3A4A]`}
           >
-            <MessageCircle className="size-4 text-[#E7B657]" aria-hidden />
-            Follow @keesevilleibc
+            <PlayCircle className="size-4 text-[#E7B657]" aria-hidden />
+            Watch on YouTube
           </a>
         </div>
 
         <figure className="justify-self-center">
           <div className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(21,39,48,0.18)] transition duration-300 hover:rotate-0">
-            <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkeesevilleibc&tabs=timeline&width=480&height=620&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"
-              width="480"
-              height="620"
-              className="block max-w-full border-0"
-              title="Independent Baptist Church on Facebook — latest posts"
-              loading="lazy"
-              allow="encrypted-media"
-            />
+            <div className="aspect-video w-[480px] max-w-full overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/live_stream?channel=UCcfdb16pdrphK3mrHH71MXQ"
+                className="block h-full w-full border-0"
+                title="Independent Baptist Church — live stream on YouTube"
+                loading="lazy"
+                allow="accelerated-2d-canvas; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
             <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
-              Live from facebook.com/keesevilleibc — updates itself, no
-              webmaster required.
+              Streaming live from @ibckeeseville — the current service appears
+              here automatically, no webmaster required.
             </figcaption>
           </div>
         </figure>
