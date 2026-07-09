@@ -54,7 +54,6 @@ const SERVICES = [
   { title: "Sunday School", time: "10:00 AM", note: "Classes for every age" },
   { title: "Morning Worship", time: "11:00 AM", note: "Nursery through Junior Church available" },
   { title: "Evening Service", time: "6:30 PM", note: "A quieter, Bible-centered gathering" },
-  { title: "Prayer Meeting", time: "Wed · 6:30 PM", note: "Midweek prayer and encouragement" },
 ];
 
 const SUNDAY_CHIPS = [
