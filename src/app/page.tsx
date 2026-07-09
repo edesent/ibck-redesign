@@ -81,13 +81,6 @@ const ROUTE_STOPS = [
     star: true,
   },
   {
-    disk: "#4A7C99",
-    name: "Port Kent Ferry",
-    distance: "10 minutes east",
-    note: "Across Lake Champlain to Burlington, Vermont.",
-    star: false,
-  },
-  {
     disk: "#2F5D4A",
     name: "Plattsburgh",
     distance: "15 miles north",
@@ -739,8 +732,8 @@ function VisitSection() {
             meet new people.&rdquo;
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-8 text-[#F7F3EA]/75">
-            Headed to the Chasm, catching the ferry, passing through on Route
-            22 — or looking for a church to call home. Either way, that
+            Headed to the Chasm, passing through on Route 22 — or looking
+            for a church to call home. Either way, that
             invitation is the whole policy.
           </p>
 
