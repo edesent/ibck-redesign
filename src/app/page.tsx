@@ -698,17 +698,17 @@ function LiveStreamSection() {
           <div className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(21,39,48,0.18)] transition duration-300 hover:rotate-0">
             <div className="aspect-video w-[480px] max-w-full overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/live_stream?channel=UCcfdb16pdrphK3mrHH71MXQ"
+                src="https://www.youtube.com/embed/videoseries?list=UUcfdb16pdrphK3mrHH71MXQ"
                 className="block h-full w-full border-0"
-                title="Independent Baptist Church — live stream on YouTube"
+                title="Independent Baptist Church — latest service on YouTube"
                 loading="lazy"
                 allow="accelerated-2d-canvas; encrypted-media; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
             <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
-              Streaming live from @ibckeeseville — the current service appears
-              here automatically, no webmaster required.
+              The most recent service from @ibckeeseville — this updates itself
+              after every upload, no webmaster required.
             </figcaption>
           </div>
         </figure>
