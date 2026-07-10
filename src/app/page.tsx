@@ -48,6 +48,7 @@ const NAV = [
   { href: "#visit", label: "First Visit", disk: "#E2A63B" },
   { href: "#area", label: "Our Area", disk: "#4A7C99" },
   { href: "#missions", label: "Missions", disk: "#2F5D4A" },
+  { href: "/sermons", label: "Sermons", disk: "#B5502F" },
   { href: "#contact", label: "Contact", disk: "#8A6FA8" },
 ];
 
@@ -692,6 +693,14 @@ function LiveStreamSection() {
             <PlayCircle className="size-4 text-[#E7B657]" aria-hidden />
             Watch on YouTube
           </a>
+          <p className="mt-4">
+            <Link
+              href="/sermons"
+              className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.16em] text-[#8A6A2F] transition hover:text-[#0E212B]`}
+            >
+              Browse all sermons →
+            </Link>
+          </p>
         </div>
 
         <figure className="justify-self-center">
