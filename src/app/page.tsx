@@ -629,9 +629,20 @@ function MissionsSection() {
               className="flex items-baseline justify-between gap-4 border-b border-[#DCD2BB] py-3.5"
             >
               <span className={`${DISPLAY} text-lg font-medium text-[#152730]`}>{m.name}</span>
-              <span className={`${LABEL} text-right text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A8571]`}>
-                {m.org}
-              </span>
+              {m.url ? (
+                <a
+                  href={m.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${LABEL} text-right text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A8571] underline decoration-[#DCD2BB] underline-offset-4 transition hover:text-[#2F5D4A] hover:decoration-[#2F5D4A]`}
+                >
+                  {m.org}
+                </a>
+              ) : (
+                <span className={`${LABEL} text-right text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A8571]`}>
+                  {m.org}
+                </span>
+              )}
             </li>
           ))}
         </ul>
