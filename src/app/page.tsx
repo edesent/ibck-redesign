@@ -794,7 +794,7 @@ function VisitSection() {
               />
             </div>
             <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
-              Look for the steeple on the hill — flag out front, door unlocked.
+              Look for the steeple on the hill — flag out front, visitors welcome.
             </figcaption>
           </div>
         </figure>
