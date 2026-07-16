@@ -131,10 +131,10 @@ const GALLERY = [
   },
 ];
 
-const MISSIONARIES = [
+const MISSIONARIES: { name: string; org: string; url?: string }[] = [
   { name: "John Starke", org: "Equipping the Saints" },
   { name: "Jason McGuire", org: "New York Families Action" },
-  { name: "Bill & Debbie Bosley", org: "Ethnos 360" },
+  { name: "Bill & Debbie Bosley", org: "Ethnos 360", url: "https://ethnos360.org" },
   { name: "Jonathan & Cherith Teachout", org: "Baptist Mid-Missions" },
   { name: "Joy Wesson", org: "BIMI" },
   { name: "Tim & Marsha Weeks", org: "Baptist Church Planters" },
