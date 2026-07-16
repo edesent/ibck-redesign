@@ -400,9 +400,9 @@ function SermonsFooter() {
               </a>
             </li>
             <li>
-              <a href="mailto:kevin.bettinger@gmail.com" className="group flex items-start gap-3 text-[#F7F3EA]/70 transition hover:text-white">
+              <a href="mailto:kevin.bettinger@ibck.org" className="group flex items-start gap-3 text-[#F7F3EA]/70 transition hover:text-white">
                 <Mail className="mt-0.5 size-4 shrink-0 text-[#D9A13B]" aria-hidden />
-                kevin.bettinger@gmail.com
+                kevin.bettinger@ibck.org
               </a>
             </li>
             <li>
