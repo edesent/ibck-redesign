@@ -15,6 +15,7 @@ import ChatCard from "../components/chat-card";
 
 import heroMist from "../../public/site-background.jpg";
 import churchFront from "../../public/outside-the-church.jpg";
+import congregationPhoto from "../../public/1000004555.jpg";
 import firstTime from "../../public/inside-the-church.jpg";
 import pastorPhoto from "../../public/pastor-kevin-and-joan.jpg";
 import areaLighthouse from "../../public/area-0.jpg";
