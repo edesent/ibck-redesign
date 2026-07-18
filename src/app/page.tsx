@@ -49,6 +49,7 @@ const NAV = [
   { href: "#area", label: "Our Area", disk: "#4A7C99" },
   { href: "#missions", label: "Missions", disk: "#2F5D4A" },
   { href: "/sermons", label: "Sermons", disk: "#B5502F" },
+  { href: "/give", label: "Give", disk: "#D9A13B" },
   { href: "#contact", label: "Contact", disk: "#8A6FA8" },
 ];
 
