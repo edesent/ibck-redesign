@@ -784,8 +784,8 @@ function VisitSection() {
           </div>
         </div>
 
-        <figure className="w-full max-w-md self-center justify-self-center">
-          <div className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+        <div className="flex w-full max-w-md flex-col gap-8 self-center justify-self-center">
+          <figure className="rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src={churchFront}
@@ -798,8 +798,23 @@ function VisitSection() {
             <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
               Look for the steeple on the hill — flag out front, visitors welcome.
             </figcaption>
-          </div>
-        </figure>
+          </figure>
+
+          <figure className="-rotate-1 rounded-sm bg-white p-3 pb-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={congregationPhoto}
+                alt="Our congregation gathered together on a patriotic Sunday"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className={`${DISPLAY} mt-3 px-1 text-[15px] italic leading-6 text-[#3F4A50]`}>
+              Our church family — come find your seat among us.
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
   );
