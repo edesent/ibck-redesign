@@ -9,6 +9,18 @@
    ink blue #0E212B · birch paper #F7F3EA · dawn gold #D9A13B
    trail-disk accents: red #C14E33 · yellow #E2A63B · blue #4A7C99 · pine #2F5D4A */
 
+:root {
+  --ct-accent: #d9a13b;
+  --ct-accent-deep: #b9822a;
+  --ct-heading: #152730;
+  --ct-ink: #22333b;
+  --ct-muted: #5c5a4e;
+  --ct-line: #dcd2bb;
+  --ct-paper: #f7f3ea;
+  --ct-serif: var(--font-display, Georgia, serif);
+  --ct-sans: var(--font-label, inherit);
+}
+
 html {
   scroll-behavior: smooth;
 }
