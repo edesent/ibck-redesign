@@ -274,12 +274,11 @@ function Hero() {
 
         <div className="mt-9 flex flex-col gap-4 rounded-sm border border-[#D9A13B]/50 bg-[#D9A13B]/15 p-4 backdrop-blur-sm sm:flex-row sm:items-center">
           <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-sm sm:h-28 sm:w-48">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/kdYOSBy5PeqU0R_M4ypc856j_1wsaZz5/1000002250-9YQFvYm1C9HdWuZiCLEwnjADhUkmYx.jpg"
               alt="Ausable Chasm, the gorge near our church where the picnic will be held"
-              fill
-              sizes="(min-width: 640px) 192px, 100vw"
-              className="object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div className="flex-1">
