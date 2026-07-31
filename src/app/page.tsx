@@ -272,6 +272,27 @@ function Hero() {
           </span>
         </p>
 
+        <div className="mt-9 flex flex-col items-start gap-3 rounded-sm border border-[#D9A13B]/50 bg-[#D9A13B]/15 px-5 py-4 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className={`${LABEL} text-[13px] font-bold uppercase tracking-[0.24em] text-[#E7B657]`}>
+              Special Event · Sunday, August 9
+            </p>
+            <p className={`${DISPLAY} mt-1 text-xl font-medium text-[#F7F3EA] sm:text-2xl`}>
+              Church at the Chasm — IBC Annual Church Picnic
+            </p>
+            <p className="mt-1.5 max-w-xl text-sm leading-6 text-[#F7F3EA]/75">
+              Join us at the Ausable Chasm pavilion at 11:00 AM for worship, songs, and a BBQ — bring a lawn chair! This is our only gathering that day (no Sunday School or evening service).
+              Need a ride? Call (518) 834-9620.
+            </p>
+          </div>
+          <a
+            href="tel:+15188349620"
+            className={`${LABEL} inline-flex h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-sm bg-[#D9A13B] px-5 text-[14px] font-bold uppercase tracking-[0.14em] text-[#0E212B] transition hover:bg-[#E7B657]`}
+          >
+            Need a ride? Call us
+          </a>
+        </div>
+
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <a
             href="#visit"
