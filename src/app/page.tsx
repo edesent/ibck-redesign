@@ -1081,6 +1081,47 @@ function Topo({ className }: { className?: string }) {
   );
 }
 
+/* Ausable Chasm gorge illustration — original line art, matches Topo/Ridge/Compass style */
+function ChasmIllustration({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 240 140" className={className} aria-hidden preserveAspectRatio="xMidYMid slice">
+      {/* far canyon walls */}
+      <path d="M0 10 L70 10 L52 70 L0 70 Z" fill="currentColor" opacity="0.22" />
+      <path d="M240 10 L170 10 L188 70 L240 70 Z" fill="currentColor" opacity="0.22" />
+      {/* mid canyon walls, layered sandstone strata */}
+      <path d="M0 28 L88 28 L64 105 L0 105 Z" fill="currentColor" opacity="0.4" />
+      <path d="M240 28 L152 28 L176 105 L240 105 Z" fill="currentColor" opacity="0.4" />
+      {[38, 50, 62, 74].map((y) => (
+        <g key={y} opacity="0.3">
+          <path d={`M4 ${y} L${84 - (y - 28) * 0.3} ${y}`} stroke="currentColor" strokeWidth="1" />
+          <path d={`M236 ${y} L${156 + (y - 28) * 0.3} ${y}`} stroke="currentColor" strokeWidth="1" />
+        </g>
+      ))}
+      {/* near canyon walls, converging to the gorge floor */}
+      <path d="M0 46 L104 46 L76 140 L0 140 Z" fill="currentColor" opacity="0.72" />
+      <path d="M240 46 L136 46 L164 140 L240 140 Z" fill="currentColor" opacity="0.72" />
+      {/* river running through the gorge */}
+      <path d="M76 140 L104 46 L136 46 L164 140 Z" fill="currentColor" opacity="0.14" />
+      <path
+        d="M96 140 C 100 110, 112 90, 108 66 C 106 56, 112 50, 118 46"
+        stroke="currentColor"
+        strokeWidth="2"
+        opacity="0.5"
+        fill="none"
+      />
+      {/* pines along the rim */}
+      {[14, 26, 200, 214].map((x, i) => (
+        <path
+          key={x}
+          d={`M${x} ${i < 2 ? 28 : 28} l6 -16 l6 16 l-4 0 l0 6 l-4 0 l0 -6 Z`}
+          fill="currentColor"
+          opacity="0.5"
+        />
+      ))}
+    </svg>
+  );
+}
+
 /* NY Route 22 shield */
 function RouteShield() {
   return (
