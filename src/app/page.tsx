@@ -272,8 +272,9 @@ function Hero() {
           </span>
         </p>
 
-        <div className="mt-9 flex flex-col items-start gap-3 rounded-sm border border-[#D9A13B]/50 bg-[#D9A13B]/15 px-5 py-4 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
-          <div>
+        <div className="mt-9 flex flex-col gap-4 rounded-sm border border-[#D9A13B]/50 bg-[#D9A13B]/15 p-4 backdrop-blur-sm sm:flex-row sm:items-center">
+          <ChasmIllustration className="h-28 w-full shrink-0 rounded-sm bg-[#0B1B23]/50 text-[#E7B657] sm:h-28 sm:w-48" />
+          <div className="flex-1">
             <p className={`${LABEL} text-[13px] font-bold uppercase tracking-[0.24em] text-[#E7B657]`}>
               Special Event · Sunday, August 9
             </p>
