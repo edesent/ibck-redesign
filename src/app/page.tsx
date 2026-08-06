@@ -688,7 +688,7 @@ function MissionsSection() {
 
 function CredoBand() {
   return (
-    <section className="bg-[#D9A13B] py-20 text-[#1A2126] sm:py-24">
+    <section id="mission" className="bg-[#D9A13B] py-20 text-[#1A2126] sm:py-24">
       <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
         <p className={`${LABEL} text-[14px] font-bold uppercase tracking-[0.32em] text-[#0E212B]/70`}>
           Our mission
