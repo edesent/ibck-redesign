@@ -93,13 +93,6 @@ const ANNOUNCEMENTS: Announcement[] = [
     ],
     disk: "#B5502F",
   },
-  {
-    icon: MoonStar,
-    eyebrow: "Please note",
-    title: "No Evening Service Tonight",
-    body: "Enjoy the fellowship after the morning service, and plan to gather again next Lord's Day.",
-    disk: "#152730",
-  },
 ];
 
 /* ------------------------------------------------------------------ */
