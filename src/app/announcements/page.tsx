@@ -12,7 +12,6 @@ import {
   BookOpen,
   CalendarClock,
   UtensilsCrossed,
-  MoonStar,
 } from "lucide-react";
 
 import logoMark from "../../../public/ibck-logo.png";
