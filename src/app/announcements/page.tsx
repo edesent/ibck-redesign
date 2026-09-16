@@ -9,8 +9,6 @@ import {
   MessageCircle,
   Phone,
   HandHeart,
-  PartyPopper,
-  Handshake,
   BookOpen,
   CalendarClock,
   UtensilsCrossed,
