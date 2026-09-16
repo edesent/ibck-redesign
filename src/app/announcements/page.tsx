@@ -63,20 +63,6 @@ const ANNOUNCEMENTS: Announcement[] = [
     disk: "#2F5D4A",
   },
   {
-    icon: PartyPopper,
-    eyebrow: "Celebration · Today",
-    title: "Mary Starke's 90th Birthday",
-    body: "Join us after the morning service — stay and celebrate with Mary and her family.",
-    disk: "#C14E33",
-  },
-  {
-    icon: Handshake,
-    eyebrow: "A word of welcome",
-    title: "Welcome, Missionary John Starke",
-    body: "We are glad to have you with us. Please greet John and thank God for his work.",
-    disk: "#4A7C99",
-  },
-  {
     icon: BookOpen,
     eyebrow: "Ladies Bible study",
     title: "End Times Biblical Prophecy",
