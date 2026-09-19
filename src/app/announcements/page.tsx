@@ -54,17 +54,10 @@ type Announcement = {
 
 const ANNOUNCEMENTS: Announcement[] = [
   {
-    icon: HandHeart,
-    eyebrow: "With grateful hearts",
-    title: "Thank You to Our Playground Work Crew",
-    body: "Thank you to every playground work crew volunteer. Your time, strength, and care are a gift to the children of this church and to all who will play and gather there.",
-    disk: "#2F5D4A",
-  },
-  {
     icon: BookOpen,
     eyebrow: "Ladies Bible study",
     title: "End Times Biblical Prophecy",
-    body: "All ladies are welcome to join this study.",
+    body: "All ladies are welcome.",
     meta: [
       { label: "Begins", value: "Thursday, September 17" },
       { label: "Time", value: "5:30 p.m." },
@@ -72,12 +65,34 @@ const ANNOUNCEMENTS: Announcement[] = [
     disk: "#8A6FA8",
   },
   {
+    icon: Gift,
+    eyebrow: "Operation Christmas Child",
+    title: "OCC Workday",
+    body: "Help prepare boxes — all are welcome.",
+    meta: [
+      { label: "When", value: "This Tuesday, September 22" },
+      { label: "Time", value: "9:30 a.m." },
+    ],
+    disk: "#2F5D4A",
+  },
+  {
+    icon: Users,
+    eyebrow: "Men's ministry",
+    title: "Truth Rising",
+    body: "A Colson Center study — hope, truth, identity, and calling.",
+    meta: [
+      { label: "When", value: "This Tuesday, September 22" },
+      { label: "Time", value: "7:00 p.m." },
+    ],
+    disk: "#B5502F",
+  },
+  {
     icon: CalendarClock,
     eyebrow: "Ladies Bible study",
-    title: "Ladies Tuesday Bible Study",
-    body: "Mark your calendars — a new season begins.",
+    title: "The Great Disappearance",
+    body: "Books are available from Karol Twetan.",
     meta: [
-      { label: "Begins", value: "Tuesday, October 14" },
+      { label: "Begins", value: "Tuesday, October 13" },
       { label: "Time", value: "10:30 a.m." },
     ],
     disk: "#D9A13B",
@@ -91,7 +106,7 @@ const ANNOUNCEMENTS: Announcement[] = [
       { label: "When", value: "Saturday, September 26 · 12:00 noon" },
       { label: "Where", value: "The Barber Home" },
     ],
-    disk: "#B5502F",
+    disk: "#C14E33",
   },
 ];
 
