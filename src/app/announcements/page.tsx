@@ -8,8 +8,9 @@ import {
   Mail,
   MessageCircle,
   Phone,
-  HandHeart,
   BookOpen,
+  Gift,
+  Users,
   CalendarClock,
   UtensilsCrossed,
 } from "lucide-react";
