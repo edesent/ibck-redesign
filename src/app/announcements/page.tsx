@@ -59,7 +59,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     title: "End Times Biblical Prophecy",
     body: "All ladies are welcome.",
     meta: [
-      { label: "Begins", value: "Thursday, September 17" },
+      { label: "Begins", value: "Thursday, September 24" },
       { label: "Time", value: "5:30 p.m." },
     ],
     disk: "#8A6FA8",
