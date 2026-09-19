@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 
 type Announcement = {
-  icon: typeof HandHeart;
+  icon: typeof BookOpen;
   eyebrow: string;
   title: string;
   body: string;
