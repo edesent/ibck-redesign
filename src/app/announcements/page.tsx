@@ -133,7 +133,7 @@ export default function AnnouncementsPage() {
             Announcements
           </h1>
           <p className={`${DISPLAY} mt-5 max-w-2xl text-lg italic leading-8 text-[#F7F3EA]/80`}>
-            Please take a moment to note these gatherings and thanks.
+            Please take a moment to note these gatherings.
           </p>
         </div>
       </section>
