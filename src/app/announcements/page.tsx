@@ -9,10 +9,7 @@ import {
   MessageCircle,
   Phone,
   BookOpen,
-  Gift,
-  Users,
   CalendarClock,
-  UtensilsCrossed,
 } from "lucide-react";
 
 import logoMark from "../../../public/ibck-logo.png";
