@@ -54,39 +54,6 @@ type Announcement = {
 
 const ANNOUNCEMENTS: Announcement[] = [
   {
-    icon: BookOpen,
-    eyebrow: "Ladies Bible study",
-    title: "End Times Biblical Prophecy",
-    body: "All ladies are welcome.",
-    meta: [
-      { label: "Thursdays", value: "September 24" },
-      { label: "Time", value: "5:30 p.m." },
-    ],
-    disk: "#8A6FA8",
-  },
-  {
-    icon: Gift,
-    eyebrow: "Operation Christmas Child",
-    title: "OCC Workday",
-    body: "Help prepare boxes — all are welcome.",
-    meta: [
-      { label: "When", value: "This Tuesday, September 22" },
-      { label: "Time", value: "9:30 a.m." },
-    ],
-    disk: "#2F5D4A",
-  },
-  {
-    icon: Users,
-    eyebrow: "Men's ministry",
-    title: "Truth Rising",
-    body: "A Colson Center study — hope, truth, identity, and calling.",
-    meta: [
-      { label: "When", value: "This Tuesday, September 22" },
-      { label: "Time", value: "7:00 p.m." },
-    ],
-    disk: "#B5502F",
-  },
-  {
     icon: CalendarClock,
     eyebrow: "Ladies Bible study",
     title: "The Great Disappearance",
