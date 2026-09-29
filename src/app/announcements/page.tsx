@@ -9,6 +9,7 @@ import {
   MessageCircle,
   Phone,
   BookOpen,
+  Gift,
   CalendarClock,
 } from "lucide-react";
 
