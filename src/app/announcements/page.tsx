@@ -64,17 +64,6 @@ const ANNOUNCEMENTS: Announcement[] = [
     ],
     disk: "#D9A13B",
   },
-  {
-    icon: UtensilsCrossed,
-    eyebrow: "Ladies luncheon",
-    title: "Ladies Luncheon",
-    body: "All ladies welcome — please bring a dish to share.",
-    meta: [
-      { label: "When", value: "Saturday, September 26 · 12:00 noon" },
-      { label: "Where", value: "The Barber Home" },
-    ],
-    disk: "#C14E33",
-  },
 ];
 
 /* ------------------------------------------------------------------ */
