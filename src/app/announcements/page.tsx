@@ -51,6 +51,17 @@ type Announcement = {
 
 const ANNOUNCEMENTS: Announcement[] = [
   {
+    icon: Gift,
+    eyebrow: "Operation Christmas Child",
+    title: "OCC Workday",
+    body: "Help prepare boxes — all are welcome.",
+    meta: [
+      { label: "When", value: "This Tuesday, September 29" },
+      { label: "Time", value: "9:30 a.m." },
+    ],
+    disk: "#2F5D4A",
+  },
+  {
     icon: CalendarClock,
     eyebrow: "Ladies Bible study",
     title: "The Great Disappearance",
