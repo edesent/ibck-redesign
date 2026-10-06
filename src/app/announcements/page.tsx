@@ -52,13 +52,13 @@ type Announcement = {
 
 const ANNOUNCEMENTS: Announcement[] = [
   {
-    icon: Gift,
-    eyebrow: "Operation Christmas Child",
-    title: "OCC Workday",
-    body: "Help prepare boxes — all are welcome.",
+    icon: Utensils,
+    eyebrow: "Fellowship",
+    title: "Church Luncheon",
+    body: "Stay after morning worship and join the church family for a meal together.",
     meta: [
-      { label: "When", value: "This Tuesday, September 29" },
-      { label: "Time", value: "9:30 a.m." },
+      { label: "When", value: "This Sunday, October 11" },
+      { label: "Time", value: "After morning worship" },
     ],
     disk: "#2F5D4A",
   },
