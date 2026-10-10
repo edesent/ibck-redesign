@@ -212,6 +212,11 @@ function Header() {
                 aria-hidden
               />
               {item.label}
+              {item.badge && (
+                <span className="rounded-sm bg-[#D9A13B] px-1.5 py-0.5 text-[11px] font-bold leading-none tracking-[0.14em] text-[#0E212B]">
+                  {item.badge}
+                </span>
+              )}
             </a>
           ))}
         </nav>
