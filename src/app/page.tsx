@@ -4,6 +4,7 @@ import { Fraunces, Barlow_Condensed } from "next/font/google";
 import {
   ArrowRight,
   ArrowUpRight,
+  Megaphone,
   Mail,
   MapPin,
   MessageCircle,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 import ChatCard from "../components/chat-card";
+import { ANNOUNCEMENTS, ANNOUNCEMENTS_UPDATED } from "../lib/announcements";
 
 import heroMist from "../../public/site-background.jpg";
 import churchFront from "../../public/outside-the-church.jpg";
