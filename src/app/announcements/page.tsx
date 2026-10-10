@@ -65,6 +65,13 @@ export default function AnnouncementsPage() {
           <p className={`${DISPLAY} mt-5 max-w-2xl text-lg italic leading-8 text-[#F7F3EA]/80`}>
             Please take a moment to note these gatherings.
           </p>
+          <p className={`${LABEL} mt-7 inline-flex items-center gap-2.5 rounded-sm bg-[#D9A13B] px-4 py-2 text-[14px] font-bold uppercase tracking-[0.2em] text-[#0E212B]`}>
+            <span className="relative flex size-2.5" aria-hidden>
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#0E212B]/50" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-[#0E212B]" />
+            </span>
+            Updated {ANNOUNCEMENTS_UPDATED}
+          </p>
         </div>
       </section>
 
