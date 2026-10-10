@@ -8,12 +8,10 @@ import {
   Mail,
   MessageCircle,
   Phone,
-  BookOpen,
-  Utensils,
-  CalendarClock,
 } from "lucide-react";
 
 import logoMark from "../../../public/ibck-logo.png";
+import { ANNOUNCEMENTS, ANNOUNCEMENTS_UPDATED } from "../../lib/announcements";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
