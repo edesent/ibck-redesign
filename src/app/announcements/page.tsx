@@ -39,39 +39,6 @@ export const metadata: Metadata = {
 /* Data — this week's announcements                                    */
 /* ------------------------------------------------------------------ */
 
-type Announcement = {
-  icon: typeof BookOpen;
-  eyebrow: string;
-  title: string;
-  body: string;
-  meta?: { label: string; value: string }[];
-  disk: string;
-};
-
-const ANNOUNCEMENTS: Announcement[] = [
-  {
-    icon: Utensils,
-    eyebrow: "Fellowship",
-    title: "Church Luncheon",
-    body: "Stay after morning worship and join the church family for a meal together.",
-    meta: [
-      { label: "When", value: "This Sunday, October 11" },
-      { label: "Time", value: "After morning worship" },
-    ],
-    disk: "#2F5D4A",
-  },
-  {
-    icon: CalendarClock,
-    eyebrow: "Ladies Bible study",
-    title: "The Great Disappearance",
-    body: "Books are available from Karol Twetan.",
-    meta: [
-      { label: "Begins", value: "Tuesday, October 13" },
-      { label: "Time", value: "10:30 a.m." },
-    ],
-    disk: "#D9A13B",
-  },
-];
 
 /* ------------------------------------------------------------------ */
 /* Page                                                                */
