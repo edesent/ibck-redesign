@@ -259,6 +259,36 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,33,43,0.72)_0%,rgba(14,33,43,0.25)_38%,rgba(14,33,43,0.55)_72%,rgba(14,33,43,0.9)_100%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-10 pt-36 lg:px-8">
+        {/* Latest announcements callout */}
+        <Link
+          href="/announcements"
+          className="group mb-10 flex flex-col gap-4 rounded-sm border border-[#E7B657] bg-[#D9A13B] p-5 text-[#0E212B] shadow-[0_14px_40px_rgba(0,0,0,0.35)] transition hover:bg-[#E7B657] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6"
+        >
+          <div className="flex items-start gap-4">
+            <span className="mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-full bg-[#0E212B]" aria-hidden>
+              <Megaphone className="size-5 text-[#E7B657]" />
+            </span>
+            <div className="min-w-0">
+              <p className={`${LABEL} inline-flex items-center gap-2.5 text-[14px] font-bold uppercase tracking-[0.26em]`}>
+                <span className="relative flex size-2.5" aria-hidden>
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#C14E33]/70" />
+                  <span className="relative inline-flex size-2.5 rounded-full bg-[#C14E33]" />
+                </span>
+                New announcements · Updated {ANNOUNCEMENTS_UPDATED}
+              </p>
+              <p className={`${DISPLAY} mt-1.5 text-xl font-medium leading-snug sm:text-2xl`}>
+                {ANNOUNCEMENTS.map((a) => a.chip).join("  ·  ")}
+              </p>
+            </div>
+          </div>
+          <span
+            className={`${LABEL} inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#0E212B] px-5 py-3 text-[15px] font-bold uppercase tracking-[0.14em] text-[#F7F3EA] transition group-hover:bg-[#152730]`}
+          >
+            See all announcements
+            <ArrowRight className="size-4 text-[#E7B657] transition group-hover:translate-x-0.5" aria-hidden />
+          </span>
+        </Link>
+
         <p className={`${LABEL} inline-flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] font-semibold uppercase tracking-[0.3em] text-[#E7B657]`}>
           Keeseville, New York
           <span className="inline-block size-1.5 rounded-full bg-[#E7B657]/70" aria-hidden />
