@@ -1,9 +1,9 @@
 import {
   BookOpen,
-  CalendarCheck,
   Gift,
-  Package,
+  Music,
   Users,
+  Utensils,
   type LucideIcon,
 } from "lucide-react";
 
@@ -13,7 +13,7 @@ import {
 /* ------------------------------------------------------------------ */
 
 /** Shown on the homepage callout and the announcements page. */
-export const ANNOUNCEMENTS_UPDATED = "October 18, 2026";
+export const ANNOUNCEMENTS_UPDATED = "October 25, 2026";
 
 export type Announcement = {
   icon: LucideIcon;
@@ -27,44 +27,6 @@ export type Announcement = {
 };
 
 export const ANNOUNCEMENTS: Announcement[] = [
-  {
-    icon: CalendarCheck,
-    eyebrow: "Outreach",
-    title: "Outreach Meeting",
-    body: "To discuss Prayer, Praise & Pie and Thanksgiving Dinner.",
-    meta: [
-      { label: "When", value: "Today, October 18" },
-      { label: "Time", value: "Following morning service" },
-      { label: "Prayer, Praise & Pie", value: "November 25" },
-      { label: "Thanksgiving Dinner", value: "November 26" },
-    ],
-    disk: "#C14E33",
-    chip: "Outreach meeting today after service",
-  },
-  {
-    icon: Gift,
-    eyebrow: "Operation Christmas Child",
-    title: "OCC Workday",
-    body: "Join us to pack shoeboxes for children around the world.",
-    meta: [
-      { label: "Date", value: "Tuesday, October 20" },
-      { label: "Time", value: "9:30 a.m." },
-    ],
-    disk: "#3E6B8A",
-    chip: "OCC Workday Oct 20",
-  },
-  {
-    icon: Package,
-    eyebrow: "Outreach",
-    title: "Outreach Packets Packing",
-    body: "Help prepare packets for distribution.",
-    meta: [
-      { label: "Packing", value: "Saturday, October 24 · 9:00 a.m." },
-      { label: "Distribution", value: "Week of November 1" },
-    ],
-    disk: "#2F5D4A",
-    chip: "Outreach packet packing Oct 24",
-  },
   {
     icon: BookOpen,
     eyebrow: "Bible Study",
@@ -88,5 +50,33 @@ export const ANNOUNCEMENTS: Announcement[] = [
     ],
     disk: "#5B4B8A",
     chip: "Men’s Ministry Oct 27",
+  },
+  {
+    icon: Gift,
+    eyebrow: "Giving",
+    title: "The Giving Trees",
+    body: "Now’s the time!",
+    disk: "#C14E33",
+    chip: "The Giving Trees — now’s the time!",
+  },
+  {
+    icon: Utensils,
+    eyebrow: "Thanksgiving",
+    title: "Thanksgiving Meal & Pies",
+    body: "Sign-up sheets are on the bulletin board.",
+    disk: "#2F5D4A",
+    chip: "Thanksgiving Meal & Pies sign-ups",
+  },
+  {
+    icon: Music,
+    eyebrow: "Concert",
+    title: "Stephen Forester in Concert",
+    body: "Join us for an evening of music.",
+    meta: [
+      { label: "Date", value: "November 21" },
+      { label: "Time", value: "6:30 p.m." },
+    ],
+    disk: "#3E6B8A",
+    chip: "Stephen Forester in Concert Nov 21",
   },
 ];
