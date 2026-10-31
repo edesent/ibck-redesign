@@ -32,12 +32,12 @@ export type Announcement = {
 export const ANNOUNCEMENTS: Announcement[] = [
   {
     icon: Megaphone,
-    eyebrow: "Today",
+    eyebrow: "Outreach",
     title: "Church Outreach Packet Distribution",
-    body: "Church Outreach Packet Distribution begins today!",
-    meta: [{ label: "When", value: "Today · Sunday, November 1" }],
+    body: "Church Outreach Packet Distribution begins November 1!",
+    meta: [{ label: "Begins", value: "Sunday, November 1" }],
     disk: "#C14E33",
-    chip: "Outreach Packet Distribution begins today",
+    chip: "Outreach Packet Distribution begins Nov 1",
   },
   {
     icon: Package,
