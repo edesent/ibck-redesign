@@ -1,11 +1,9 @@
 import {
   Droplets,
-  Gift,
   GraduationCap,
   Heart,
-  Megaphone,
   Music,
-  Package,
+  Users,
   Utensils,
   type LucideIcon,
 } from "lucide-react";
@@ -16,7 +14,7 @@ import {
 /* ------------------------------------------------------------------ */
 
 /** Shown on the homepage callout and the announcements page. */
-export const ANNOUNCEMENTS_UPDATED = "November 1, 2026";
+export const ANNOUNCEMENTS_UPDATED = "November 15, 2026";
 
 export type Announcement = {
   icon: LucideIcon;
@@ -30,37 +28,6 @@ export type Announcement = {
 };
 
 export const ANNOUNCEMENTS: Announcement[] = [
-  {
-    icon: Megaphone,
-    eyebrow: "Outreach",
-    title: "Church Outreach Packet Distribution",
-    body: "Church Outreach Packet Distribution begins November 1!",
-    meta: [{ label: "Begins", value: "Sunday, November 1" }],
-    disk: "#C14E33",
-    chip: "Outreach Packet Distribution begins Nov 1",
-  },
-  {
-    icon: Package,
-    eyebrow: "Operation Christmas Child",
-    title: "Operation Christmas Child Workday",
-    body: "Join us for the Operation Christmas Child workday.",
-    meta: [
-      { label: "When", value: "Tuesday, November 3 · 9:30 a.m." },
-    ],
-    disk: "#D9A13B",
-    chip: "OCC Workday Nov 3",
-  },
-  {
-    icon: Gift,
-    eyebrow: "Operation Christmas Child",
-    title: "Operation Christmas Child Box Packing",
-    body: "Come help pack boxes for children around the world.",
-    meta: [
-      { label: "When", value: "Saturday, November 14 · 11:00 a.m." },
-    ],
-    disk: "#5B4B8A",
-    chip: "OCC Box Packing Nov 14",
-  },
   {
     icon: Music,
     eyebrow: "Concert",
@@ -83,12 +50,21 @@ export const ANNOUNCEMENTS: Announcement[] = [
     chip: "Baptism Sunday Nov 22",
   },
   {
+    icon: Users,
+    eyebrow: "Men's Ministry",
+    title: "Men's Ministry",
+    body: "Men of the church, join us for our Men's Ministry gathering.",
+    meta: [{ label: "When", value: "Tuesday, November 24 · 7:00 p.m." }],
+    disk: "#C14E33",
+    chip: "Men's Ministry Nov 24",
+  },
+  {
     icon: Heart,
     eyebrow: "Prayer & Fellowship",
     title: "Prayer, Praise & Pie!",
     body: "An evening of prayer, praise, and pie.",
-    meta: [{ label: "When", value: "Wednesday, November 25" }],
-    disk: "#C14E33",
+    meta: [{ label: "When", value: "Wednesday, November 25 · 6:30 p.m." }],
+    disk: "#D9A13B",
     chip: "Prayer, Praise & Pie Nov 25",
   },
   {
@@ -99,7 +75,7 @@ export const ANNOUNCEMENTS: Announcement[] = [
     meta: [
       { label: "When", value: "Thursday, November 26 · 12:00 – 2:00 p.m." },
     ],
-    disk: "#D9A13B",
+    disk: "#2F5D4A",
     chip: "Thanksgiving Dinner Nov 26",
   },
   {
